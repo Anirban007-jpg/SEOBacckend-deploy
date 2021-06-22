@@ -26,7 +26,7 @@ const app = express();
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false, useUnifiedTopology: true}).then(() => console.log('DB connected'));
 
 // middlewares
-app.use(morgan('dev'))
+app.use(morgan())
 app.use(express.json())
 app.use(cp())
 
