@@ -4,7 +4,11 @@ const bp = require('body-parser');
 const cp = require('cookie-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv').config();
+// check
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 
 
 // bring in routes
@@ -27,9 +31,8 @@ app.use(express.json())
 app.use(cp())
 
 //cors
-if(process.env.NODE_ENV === 'development') {
-    app.use(cors({origin: `${process.env.CLIENT_URL}`}));    
-}
+app.use(cors({origin: `${process.env.CLIENT_URL}`}));    
+
 
 
 // routes
