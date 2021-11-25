@@ -75,6 +75,7 @@ exports.signup = (req,res) => {
           error: "User already exsists"
         })
       }
+    })
 
       const {name,email,about,address,mobile_no,password,role} = req.body;
       let username = sid.generate();
