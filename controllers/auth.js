@@ -230,7 +230,7 @@ exports.forgotPassword = (req, res) => {
         port: 465,
         service: "gmail",
         auth: {
-            user: 'abanerjee763@gmail.com',
+            user: 'abanerjee763',
             pass: 'Anir@007',
         },
         secure: false
