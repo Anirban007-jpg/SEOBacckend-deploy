@@ -72,7 +72,7 @@ exports.signup = (req,res) => {
     User.findOne({email: req.body.email}).exec((err,user) => {
       if (user){
         return res.status(400).json({
-          error: "User already exsists"
+          error: "User already exists"
         })
       }
     
@@ -227,10 +227,10 @@ exports.forgotPassword = (req, res) => {
       const token = jwt.sign({ _id: user._id }, process.env.JWT_RESET_PASSWORD, { expiresIn: '10m' });
 
       let transporter = nm.createTransport({
-        port: 465,
-        service: "gmail",
+        port: 587,
+        service: "Gmail",
         auth: {
-            user: 'abanerjee763',
+            user: 'abanerjee763@gmail.com',
             pass: 'Anir@007',
         },
         secure: false
