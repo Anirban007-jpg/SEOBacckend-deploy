@@ -227,13 +227,13 @@ exports.forgotPassword = (req, res) => {
       const token = jwt.sign({ _id: user._id }, process.env.JWT_RESET_PASSWORD, { expiresIn: '10m' });
 
       let transporter = nm.createTransport({
-        port: 587,
-        service: "Gmail",
+        host: "smtp.gmail.com",
+        port: 465,
         auth: {
             user: 'abanerjee763@gmail.com',
             pass: 'Anir@007',
         },
-        secure: false
+        secure: true
     
         })
       // email
