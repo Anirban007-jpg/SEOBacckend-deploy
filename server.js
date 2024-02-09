@@ -58,7 +58,7 @@ app.use(function (err, req, res, next) {
 // middlewares
 
 // apiDocs
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.status(200).json('Welcome, your app is working well');
 })
 
