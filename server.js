@@ -1,4 +1,5 @@
 const express = require('express');
+const cron = require('node-cron');
 const morgan = require('morgan');
 const bp = require('body-parser');
 const cp = require('cookie-parser');
@@ -29,6 +30,10 @@ mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useCreateIndex: t
 app.use(morgan())
 app.use(express.json())
 app.use(cp())
+
+cron.schedule('*/5 * * * *', () => {
+  console.log('running a task every two minutes');
+});
 
 //cors
 app.use(cors());    
