@@ -76,7 +76,7 @@ app.use(function (err, req, res, next) {
 
 // handle port
 const port = process.env.PORT || 8000;
-app.listen(port, '0.0.0.0' , function(err) => {
+app.listen(port, '0.0.0.0' , function(err) {
     console.log(`Server is running }`)
 })
 
